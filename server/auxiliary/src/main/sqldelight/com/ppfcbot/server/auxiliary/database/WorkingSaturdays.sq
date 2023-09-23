@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS WorkingSaturdaysDto (
+    text TEXT NOT NULL
+);
+
+select:
+SELECT * FROM WorkingSaturdaysDto LIMIT 1;
+
+delete:
+DELETE FROM WorkingSaturdaysDto;
+
+insert:
+INSERT INTO WorkingSaturdaysDto(
+    text
+) VALUES (
+    :text
+);

@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Web-js-18.16.0">
+    <output-path>$PROJECT_DIR$/../../Project/Project/Web/build/libs</output-path>
+    <root id="archive" name="Web-js-18.16.0.jar" />
+  </artifact>
+</component>

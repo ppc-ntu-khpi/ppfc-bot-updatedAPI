@@ -1,0 +1,66 @@
+CREATE TABLE IF NOT EXISTS UserDto (
+    id INTEGER PRIMARY KEY,
+    groupId INTEGER,
+    teacherId INTEGER,
+    isGroup INTEGER NOT NULL,
+    FOREIGN KEY (groupId) REFERENCES GroupDto(id) ON DELETE CASCADE,
+    FOREIGN KEY (teacherId) REFERENCES TeacherDto(id) ON DELETE CASCADE
+);
+
+selectWithParameters:
+SELECT
+    UserDto.id AS id,
+
+    TeacherDto.id AS teacherId,
+    TeacherDto.firstName AS teacherFirstName,
+    TeacherDto.lastName AS teacherLastName,
+    TeacherDto.middleName AS teacherMiddleName,
+    TeacherDto.isHeadTeacher AS teacherIsHeadTeacher,
+
+    DisciplineDto.id AS disciplineId,
+    DisciplineDto.name AS disciplineName,
+    GroupDto.id AS groupId,
+    GroupDto.number AS groupNumber,
+
+    CourseDto.id AS courseId,
+    CourseDto.number AS courseNumber
+FROM UserDto
+LEFT JOIN TeacherDto ON UserDto.teacherId = TeacherDto.id
+LEFT JOIN DisciplineDto ON TeacherDto.disciplineId = DisciplineDto.id
+
+LEFT JOIN GroupDto ON UserDto.groupId = GroupDto.id
+LEFT JOIN CourseDto ON GroupDto.courseId = CourseDto.id
+
+WHERE (:id IS NULL OR UserDto.id = :id)
+AND (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:searchQuery IS NULL OR CAST(UserDto.id AS TEXT) LIKE '%' || :searchQuery || '%')
+AND (:isGroup IS NULL OR isGroup = :isGroup)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+deleteWhereId:
+DELETE FROM UserDto WHERE id = :id;
+
+updateWhereId:
+UPDATE UserDto SET
+    groupId = :groupId,
+    teacherId = :teacherId,
+    isGroup = :isGroup
+WHERE id = :id;
+
+insert:
+INSERT INTO UserDto(
+    id,
+    groupId,
+    teacherId,
+    isGroup
+) VALUES (
+    :id,
+    :groupId,
+    :teacherId,
+    :isGroup
+);

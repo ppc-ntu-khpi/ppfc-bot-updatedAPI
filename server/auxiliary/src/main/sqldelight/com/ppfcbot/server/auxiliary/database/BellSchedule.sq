@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS BellScheduleDto (
+    text TEXT NOT NULL
+);
+
+select:
+SELECT * FROM BellScheduleDto LIMIT 1;
+
+delete:
+DELETE FROM BellScheduleDto;
+
+insert:
+INSERT INTO BellScheduleDto(
+    text
+) VALUES (
+    :text
+);

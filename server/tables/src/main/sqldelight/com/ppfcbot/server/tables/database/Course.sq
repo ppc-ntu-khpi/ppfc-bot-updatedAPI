@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS CourseDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    number INTEGER NOT NULL
+);
+
+selectWithParameters:
+SELECT * FROM CourseDto
+WHERE (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:searchQuery IS NULL OR CAST(number AS TEXT) LIKE '%' || :searchQuery || '%')
+AND (:number IS NULL OR number = :number)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+selectWhereId:
+SELECT * FROM CourseDto WHERE id = :id;
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+deleteWhereId:
+DELETE FROM CourseDto WHERE id = :id;
+
+updateWhereId:
+UPDATE CourseDto SET
+    number = :number
+WHERE id = :id;
+
+insert:
+INSERT INTO CourseDto(
+    id,
+    number
+) VALUES (
+    nullif(:id, 0),
+    :number
+);

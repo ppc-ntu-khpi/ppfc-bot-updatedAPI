@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d596ca7-d035-4dec-8491-d0a46cbcf1b4" name="Changes" comment="Initial" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/../../Project/Project/Web">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/common">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server/content">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server/infrastructure">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server/security">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server/tables">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/web">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/../../Project/Project/Web">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server/auxiliary">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VitaliiKozyrUA&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7d3067a7-ad90-4be5-9192-f58c1408fd00" />
+        <option name="url" value="https://github.com/VitaliiKozyrUA/ppfc-bot.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2UwhLz78X07QWSrmSWPPUqPuF01" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "corretto-19",
+    "last_opened_file_path": "C:/Users/vitalii/Desktop/Kotlin/ppfc-bot/server/infrastructure/src/main/kotlin/com/ppfcbot/server/infrastructure/config",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "stored_options": "{\"dialectConnections\":{\"app.cash.sqldelight.dialects.sqlite_3_18.SqliteDialect\":{\"orderedOptions\":[],\"serializedProperties\":{}}}}",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\server\infrastructure\src\main\kotlin\com\ppfcbot\server\infrastructure\config" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\web\src\jsMain\kotlin\tables\presentation\screen\tablesbar\workingsaturdays" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\web\src\jsMain\kotlin\tables\data\mapper" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\web\src\jsMain\kotlin\coreui\compose" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\web\src\jsMain\kotlin\tables\presentation\screen\tablesbar\bellschedule" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\server\auxiliary\src\main\kotlin\com\ppfcbot\server\auxiliary\data" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\server\auxiliary\src\main\kotlin\com\ppfcbot\server\auxiliary\workingsaturdays" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\web\src\jsMain\kotlin\tables\presentation\screen\tables\accesskey" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot" />
+      <recent name="C:\Users\vitalii\Desktop\Kotlin\ppfc-bot\gradle" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.ppfcbot.server.auxiliary.workingsaturdays" />
+      <recent name="com.ppfcbot.server.security.accesskey" />
+      <recent name="com.ppfcbot.server.security.auth" />
+      <recent name="com.ppfcbot.server.infrastructure.config" />
+      <recent name="com.vitaliikozyr.ppfcbot.common.models.service" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="core.domain" />
+      <recent name="tables.presentation.screen.tablesbar.workingsaturdays" />
+      <recent name="tables.domain.interactor" />
+      <recent name="tables.data.repository" />
+      <recent name="tables.domain.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.ApplicationKt">
+    <configuration name="ppfc-bot:web [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/web" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ppfc-bot:web [jsBrowserRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/web" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--continuous" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jsBrowserRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ppfcbot.server.api.ApplicationKt" />
+      <module name="ppfc-bot.server.main" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.ppfc-bot:web [build]" />
+      <item itemvalue="Gradle.ppfc-bot:web [jsBrowserRun]" />
+      <item itemvalue="Kotlin.ApplicationKt" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ppfc-bot:web [build]" />
+        <item itemvalue="Gradle.ppfc-bot:web [jsBrowserRun]" />
+        <item itemvalue="Kotlin.ApplicationKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d596ca7-d035-4dec-8491-d0a46cbcf1b4" name="Changes" comment="" />
+      <created>1693856502244</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693856502244</updated>
+      <workItem from="1693856504231" duration="84846000" />
+      <workItem from="1694338452688" duration="713000" />
+      <workItem from="1694760394779" duration="16843000" />
+      <workItem from="1694901045969" duration="119729000" />
+      <workItem from="1695278893699" duration="29544000" />
+      <workItem from="1695375471917" duration="48125000" />
+      <workItem from="1695492015874" duration="671000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial">
+      <option name="closed" value="true" />
+      <created>1695475118719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695475118719</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial">
+      <option name="closed" value="true" />
+      <created>1695475454970</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695475454970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial" />
+  </component>
+</project>

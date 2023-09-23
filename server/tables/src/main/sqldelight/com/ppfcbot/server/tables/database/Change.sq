@@ -1,0 +1,112 @@
+CREATE TABLE IF NOT EXISTS ChangeDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    classroomId INTEGER,
+    teacherId INTEGER,
+    subjectId INTEGER,
+    eventName TEXT,
+    isSubject INTEGER NOT NULL,
+    lessonNumber INTEGER,
+    date TEXT NOT NULL,
+    isNumerator INTEGER NOT NULL,
+    dayNumber INTEGER NOT NULL,
+    FOREIGN KEY (classroomId) REFERENCES ClassroomDto(id) ON DELETE CASCADE,
+    FOREIGN KEY (teacherId) REFERENCES TeacherDto(id) ON DELETE CASCADE,
+    FOREIGN KEY (subjectId) REFERENCES SubjectDto(id) ON DELETE CASCADE
+);
+
+selectWithParameters:
+SELECT
+    ChangeDto.id AS id,
+    ChangeDto.eventName AS eventName,
+    ChangeDto.isSubject AS isSubject,
+    ChangeDto.lessonNumber AS lessonNumber,
+    ChangeDto.date AS date,
+    ChangeDto.dayNumber AS dayNumber,
+    ChangeDto.isNumerator AS isNumerator,
+
+    TeacherDto.id AS teacherId,
+    TeacherDto.firstName AS teacherFirstName,
+    TeacherDto.lastName AS teacherLastName,
+    TeacherDto.middleName AS teacherMiddleName,
+    TeacherDto.isHeadTeacher AS teacherIsHeadTeacher,
+
+    DisciplineDto.id AS disciplineId,
+    DisciplineDto.name AS disciplineName,
+
+    ClassroomDto.id AS classroomId,
+    ClassroomDto.name AS classroomName,
+
+    SubjectDto.id AS subjectId,
+    SubjectDto.name AS subjectName,
+
+    GroupDto.id AS groupId,
+    GroupDto.number AS groupNumber,
+
+    CourseDto.id AS courseId,
+    CourseDto.number AS courseNumber
+FROM ChangeDto
+LEFT JOIN TeacherDto ON ChangeDto.teacherId = TeacherDto.id
+LEFT JOIN DisciplineDto ON TeacherDto.disciplineId = DisciplineDto.id
+
+LEFT JOIN ClassroomDto ON ChangeDto.classroomId = ClassroomDto.id
+LEFT JOIN SubjectDto ON ChangeDto.subjectId = SubjectDto.id
+LEFT JOIN ChangeDtoAndGroupDto ON ChangeDto.id = ChangeDtoAndGroupDto.changeId
+
+LEFT JOIN GroupDto ON ChangeDtoAndGroupDto.groupId = GroupDto.id
+LEFT JOIN CourseDto ON GroupDto.courseId = CourseDto.id
+
+WHERE (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:date IS NULL OR date = :date)
+AND (:isNumerator IS NULL OR isNumerator = :isNumerator)
+AND (:teacherId IS NULL OR teacherId = :teacherId)
+AND (:groupId IS NULL OR GroupDto.id = :groupId)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+lastInsertRowId:
+SELECT MAX(id) AS lastId FROM ChangeDto;
+
+deleteWhereId:
+DELETE FROM ChangeDto WHERE id = :id;
+
+deleteAll:
+DELETE FROM ChangeDto;
+
+updateWhereId:
+UPDATE ChangeDto SET
+    classroomId = :classroomId,
+    teacherId = :teacherId,
+    subjectId = :subjectId,
+    eventName = :eventName,
+    isSubject = :isSubject,
+    lessonNumber = :lessonNumber,
+    dayNumber = :dayNumber,
+    date = :date,
+    isNumerator = :isNumerator
+WHERE id = :id;
+
+insert:
+INSERT INTO ChangeDto(
+    id,
+    classroomId,
+    teacherId,
+    subjectId,
+    eventName,
+    isSubject,
+    lessonNumber,
+    dayNumber,
+    date,
+    isNumerator
+) VALUES (
+    nullif(:id, 0),
+    :classroomId,
+    :teacherId,
+    :subjectId,
+    :eventName,
+    :isSubject,
+    :lessonNumber,
+    :dayNumber,
+    :date,
+    :isNumerator
+);

@@ -1,0 +1,56 @@
+CREATE TABLE IF NOT EXISTS GroupDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    number INTEGER NOT NULL,
+    courseId INTEGER NOT NULL,
+    FOREIGN KEY (courseId) REFERENCES CourseDto(id) ON DELETE CASCADE
+);
+
+selectWithParameters:
+SELECT
+    GroupDto.id AS id,
+    GroupDto.number AS number,
+    CourseDto.id AS courseId,
+    CourseDto.number AS courseNumber
+FROM GroupDto
+LEFT JOIN CourseDto ON GroupDto.courseId = CourseDto.id
+WHERE (:id IS NULL OR GroupDto.id = :id)
+AND (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:searchQuery IS NULL OR CAST(GroupDto.number AS TEXT) LIKE '%' || :searchQuery || '%')
+AND (:courseId IS NULL OR GroupDto.courseId = :courseId)
+AND (:number IS NULL OR GroupDto.number = :number)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+selectWhereId:
+SELECT
+    GroupDto.id AS id,
+    GroupDto.number AS number,
+    CourseDto.id AS courseId,
+    CourseDto.number AS courseNumber
+FROM GroupDto
+LEFT JOIN CourseDto ON GroupDto.courseId = CourseDto.id
+WHERE GroupDto.id = :id;
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+deleteWhereId:
+DELETE FROM GroupDto WHERE id = :id;
+
+updateWhereId:
+UPDATE GroupDto SET
+    number = :number,
+    courseId = :courseId
+WHERE id = :id;
+
+insert:
+INSERT INTO GroupDto(
+    id,
+    number,
+    courseId
+) VALUES (
+    nullif(:id, 0),
+    :number,
+    :courseId
+);

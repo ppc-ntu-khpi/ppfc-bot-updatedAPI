@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS DisciplineDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+selectWithParameters:
+SELECT * FROM DisciplineDto
+WHERE (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:searchQuery IS NULL OR name LIKE '%' || :searchQuery || '%')
+AND (:name IS NULL OR name = :name)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+selectWhereId:
+SELECT * FROM DisciplineDto WHERE id = :id;
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+deleteWhereId:
+DELETE FROM DisciplineDto WHERE id = :id;
+
+updateWhereId:
+UPDATE DisciplineDto SET
+    name = :name
+WHERE id = :id;
+
+insert:
+INSERT INTO DisciplineDto(
+    id,
+    name
+) VALUES (
+     nullif(:id, 0),
+     :name
+);

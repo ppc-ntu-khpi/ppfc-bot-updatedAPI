@@ -1,0 +1,69 @@
+CREATE TABLE IF NOT EXISTS TeacherDto (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    firstName TEXT NOT NULL,
+    lastName TEXT NOT NULL,
+    middleName TEXT NOT NULL,
+    disciplineId INTEGER NOT NULL,
+    isHeadTeacher INTEGER NOT NULL,
+    FOREIGN KEY (disciplineId) REFERENCES DisciplineDto(id) ON DELETE CASCADE
+);
+
+selectWithParameters:
+SELECT
+    TeacherDto.*,
+    DisciplineDto.id AS discipline_id,
+    DisciplineDto.name AS discipline_name
+FROM TeacherDto
+LEFT JOIN DisciplineDto ON TeacherDto.disciplineId = DisciplineDto.id
+WHERE (:id IS NULL OR TeacherDto.id = :id)
+AND (:limit IS NULL OR :limit = 0 OR :limit > 0)
+AND (:offset IS NULL OR :offset = 0 OR :offset > 0)
+AND (:searchQuery IS NULL OR firstName LIKE '%' || :searchQuery || '%' OR lastName LIKE '%' || :searchQuery || '%')
+AND (:disciplineId IS NULL OR TeacherDto.disciplineId = :disciplineId)
+AND (:firstName IS NULL OR firstName = :firstName)
+AND (:lastName IS NULL OR lastName = :lastName)
+AND (:disciplineId IS NULL OR disciplineId = :disciplineId)
+AND (:disciplineName IS NULL OR discipline_name = :disciplineName)
+LIMIT COALESCE(:limit, 1000000000)
+OFFSET COALESCE(:offset, 0);
+
+selectWhereId:
+SELECT
+    TeacherDto.*,
+    DisciplineDto.id AS discipline_id,
+    DisciplineDto.name AS discipline_name
+FROM TeacherDto
+LEFT JOIN DisciplineDto ON TeacherDto.disciplineId = DisciplineDto.id
+WHERE TeacherDto.id = :id;
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+deleteWhereId:
+DELETE FROM TeacherDto WHERE id = :id;
+
+updateWhereId:
+UPDATE TeacherDto SET
+    firstName = :firstName,
+    lastName = :lastName,
+    middleName = :middleName,
+    disciplineId = :disciplineId,
+    isHeadTeacher = :isHeadTeacher
+WHERE id = :id;
+
+insert:
+INSERT INTO TeacherDto(
+    id,
+    firstName,
+    lastName,
+    middleName,
+    disciplineId,
+    isHeadTeacher
+) VALUES (
+    nullif(:id, 0),
+    :firstName,
+    :lastName,
+    :middleName,
+    :disciplineId,
+    :isHeadTeacher
+);
